@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/jugalw13/blockchain-go-node/blockchain"
-	"github.com/jugalw13/blockchain-go-node/security"
-	"github.com/jugalw13/blockchain-go-node/student"
+	"github.com/jugalw13/blockchain-go-node/src/blockchain"
+	"github.com/jugalw13/blockchain-go-node/src/security"
+	"github.com/jugalw13/blockchain-go-node/src/student"
 )
 
 func InitializeBlockChain() {

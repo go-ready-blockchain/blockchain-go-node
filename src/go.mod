@@ -1,4 +1,4 @@
-module github.com/jugalw13/blockchain-go-node
+module github.com/jugalw13/blockchain-go-node/src
 
 go 1.14
 

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/jugalw13/blockchain-go-node/security"
-	"github.com/jugalw13/blockchain-go-node/utils"
+	"github.com/jugalw13/blockchain-go-node/src/security"
+	"github.com/jugalw13/blockchain-go-node/src/utils"
 )
 
 type Verification struct {

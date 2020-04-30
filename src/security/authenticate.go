@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jugalw13/blockchain-go-node/utils"
+	"github.com/jugalw13/blockchain-go-node/src/utils"
 )
 
 type User struct {

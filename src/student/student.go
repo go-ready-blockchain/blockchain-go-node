@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/jugalw13/blockchain-go-node/security"
+	"github.com/jugalw13/blockchain-go-node/src/security"
 )
 
 type Student struct {
