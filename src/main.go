@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/jugalw13/blockchain-go-node/src/Init"
-	"github.com/jugalw13/blockchain-go-node/src/blockchain"
+	"github.com/go-ready-blockchain/blockchain-go-core/Init"
+	"github.com/go-ready-blockchain/blockchain-go-core/blockchain"
 )
 
 func printUsage() {
