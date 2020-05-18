@@ -3,9 +3,11 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"time"
 
 	"github.com/go-ready-blockchain/blockchain-go-core/Init"
 	"github.com/go-ready-blockchain/blockchain-go-core/blockchain"
+	"github.com/go-ready-blockchain/blockchain-go-core/logger"
 )
 
 func printUsage() {
@@ -58,8 +60,14 @@ func callprintUsage(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(message))
 }
 func callprintChain(w http.ResponseWriter, r *http.Request) {
+	name := time.Now().String()
+	logger.FileName = "Print Blockchain" + name + ".log"
+	logger.NodeName = "Blockchain Node"
+	logger.CreateFile()
 
 	printChain()
+
+	logger.UploadToS3Bucket(logger.NodeName)
 
 	w.Header().Set("Content-Type", "application/json")
 	message := "Printed Chain!!"
