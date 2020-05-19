@@ -69,6 +69,8 @@ func callprintChain(w http.ResponseWriter, r *http.Request) {
 
 	logger.UploadToS3Bucket(logger.NodeName)
 
+	logger.DeleteFile()
+
 	w.Header().Set("Content-Type", "application/json")
 	message := "Printed Chain!!"
 	w.Write([]byte(message))
