@@ -43,8 +43,16 @@ func printChain() {
 }
 
 func callcreateBlockChain(w http.ResponseWriter, r *http.Request) {
+	name := time.Now().String()
+	logger.FileName = "Create Blockchain" + name + ".log"
+	logger.NodeName = "Blockchain Node"
+	logger.CreateFile()
 
 	createBlockChain()
+
+	logger.UploadToS3Bucket(logger.NodeName)
+
+	logger.DeleteFile()
 
 	w.Header().Set("Content-Type", "application/json")
 	message := "BlockChain Initialized!"
@@ -52,13 +60,13 @@ func callcreateBlockChain(w http.ResponseWriter, r *http.Request) {
 }
 
 func callprintUsage(w http.ResponseWriter, r *http.Request) {
-
 	printUsage()
 
 	w.Header().Set("Content-Type", "application/json")
 	message := "Printed Usage!!"
 	w.Write([]byte(message))
 }
+
 func callprintChain(w http.ResponseWriter, r *http.Request) {
 	name := time.Now().String()
 	logger.FileName = "Print Blockchain" + name + ".log"
