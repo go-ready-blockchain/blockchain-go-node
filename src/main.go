@@ -12,8 +12,8 @@ import (
 
 func printUsage() {
 	fmt.Println("Usage:")
-	fmt.Println("createBlockChain \tTo Create a new Block Chain")
-	fmt.Println("print - Prints the blocks in the chain")
+	fmt.Println("Make POST request to /createBlockChain \tTo Create a new Block Chain")
+	fmt.Println("Make POST request to /print \t Prints the blocks in the chain")
 }
 
 func createBlockChain() {
