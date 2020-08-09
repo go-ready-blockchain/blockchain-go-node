@@ -3,11 +3,10 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"time"
+	
 
 	"github.com/go-ready-blockchain/blockchain-go-core/Init"
 	"github.com/go-ready-blockchain/blockchain-go-core/blockchain"
-	"github.com/go-ready-blockchain/blockchain-go-core/logger"
 )
 
 func printUsage() {
@@ -43,16 +42,16 @@ func printChain() {
 }
 
 func callcreateBlockChain(w http.ResponseWriter, r *http.Request) {
-	name := time.Now().String()
-	logger.FileName = "Create Blockchain" + name + ".log"
-	logger.NodeName = "Blockchain Node"
-	logger.CreateFile()
+	//name := time.Now().String()
+	//logger.FileName = "Create Blockchain" + name + ".log"
+	//logger.NodeName = "Blockchain Node"
+	//logger.CreateFile()
 
 	createBlockChain()
 
-	logger.UploadToS3Bucket(logger.NodeName)
+	//logger.UploadToS3Bucket(//logger.NodeName)
 
-	logger.DeleteFile()
+	//logger.DeleteFile()
 
 	w.Header().Set("Content-Type", "application/json")
 	message := "BlockChain Initialized!"
@@ -68,16 +67,16 @@ func callprintUsage(w http.ResponseWriter, r *http.Request) {
 }
 
 func callprintChain(w http.ResponseWriter, r *http.Request) {
-	name := time.Now().String()
-	logger.FileName = "Print Blockchain" + name + ".log"
-	logger.NodeName = "Blockchain Node"
-	logger.CreateFile()
+	//name := time.Now().String()
+	//logger.FileName = "Print Blockchain" + name + ".log"
+	//logger.NodeName = "Blockchain Node"
+	//logger.CreateFile()
 
 	printChain()
 
-	logger.UploadToS3Bucket(logger.NodeName)
+	//logger.UploadToS3Bucket(//logger.NodeName)
 
-	logger.DeleteFile()
+	//logger.DeleteFile()
 
 	w.Header().Set("Content-Type", "application/json")
 	message := "Printed Chain!!"
